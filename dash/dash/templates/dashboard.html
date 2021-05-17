@@ -1,0 +1,17 @@
+<!-- mysite/templates/dashboard.html -->
+
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="ratio ratio-16x9">
+      <iframe src="https://example.com" title="Folium map"> some text </iframe>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <a href="./first_diagram.html" class="btn btn-warning">First Diagram</a>
+      <a href="./second_diagram.html" class="btn btn-warning">Second Diagram</a>
+      <a href="./third_diagram.html" class="btn btn-warning">Third Diagram</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

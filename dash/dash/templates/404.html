@@ -1,0 +1,22 @@
+<!-- mysite/templates/404.html -->
+
+{% extends "base.html" %} {% load static %} {% block title %}Kari Sakib | Data
+Scientist{% endblock %} {% block content %}
+<div class="container vh-100">
+  <div
+    style="
+      margin-top: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    "
+  >
+    <h1 class="is-size-1">404</h1>
+    <br />
+    <p>Are you lost? This page doesn't exist. Find your way back down below!</p>
+    <br />
+    <a class="button is-black" href="/index.html">Go back home</a>
+  </div>
+</div>
+{% endblock %}
