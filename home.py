@@ -1,6 +1,15 @@
 import streamlit as st
 
+banner = 'img/banner.png'
+
+# def img_to_bytes(img_path=banner):
+#     img_bytes = Path(img_path).read_bytes()
+#     encoded = base64.b64encode(img_bytes).decode()
+#     return encoded
+
 def app():
+    st.image(banner, use_column_width=True)
+
     st.title('Home page')
 
     st.write('Research Statement')
