@@ -4,21 +4,50 @@
 
 - [Acknowledgement](#acknowledgement)
 - [Introduction](#introduction)
-- [Technology Used](#technology-used)
+- [Installation](#installation)
+- [Technology Stack](#technology-stack)
 - [Data Cleaning](#data-cleaning)
 - [Hypothesis](#hypothesis)
 - [Conclusion](#conclusion)
-- [Summary](#summary)
+- [About us](#about-us)
 
-# AIRBNB DATASET ANALYSIS
-## Our Study
-**The [current](https://www.kaggle.com/ivanovskia1/nyc-airbnb-rental-data-october-2017) NYC AirBnb Rental data October 2017 contains information about airbnb listings. It has it's location by latitute and longitude as well as the neighborhood,borough. It also has its price per night, amount of bedrooms, bathrooms ect.**
+# COVID-19 IN NYC DATA ANALYSIS
 
-The aim of our study is to explore data produced by Airbnb listings and look for factors that might have contributed to Airbnb sucess. Futhermore, find out if we can find any patterns and predict the location and price of a listing. Based on our predictions we built the machine learning model to help people who are thinking of renting have better understanding of listing price.
+# Acknowledgement
+Our team would like to thank all instructors at The Knowledge House for their guidance, help, encouragement and inspiration to complete this Capstone Project. This wouldn't have been possible without you. We would also like to thank The NYC Department of Health for proving the data we used for this study. 
+
+# Introduction
+**We are tasked with looking at available information to identify those in the city with the biggest risk of covid. It is documented that elderly are the ones who are most at risk for the covid virus. By analyzing the trends of Covid-19 as it applied to how age affects mortality in NYC we will be able to reach a conclusion and prove/disprove our hypothesis.**
+
+The source of our data is [NYC Department of Health Github's Page](https://github.com/nychealth/coronavirus-data) on Covid-19 statistices, which is updated daily.
 
 <br>
 
-## Technology Stack
+# Installation
+
+In order to run this application locally on you machine you would need to follow these instructions:
+1. In your terminal type:  "pip install pipenv" - this will create the enviroment
+2. In order to activate the enviroment type: "pipenv shell"
+3. In order to install all packages needed type: "pipenv install"
+4. And finally you can run the app by typing this command: "streamlit run app.py"
+
+<br>
+
+<div align="center"><img src="./img/app.gif"></div>
+
+<br>
+
+<div align="center"><img src="./img/home_screenshot.png"></div>
+
+<br>
+
+<div align="center"><img src="./img/totals_screenshot.png"></div>
+
+<br>
+
+<div align="center"><img src="./img/boro_screenshot.png"></div>
+
+# Technology Stack
 In this analysis, we used python as the primary programming language because of its rich palette of tools that make data analysis a cinch. Some of the packages we used are
 | Library | Description |
 | --- | --- |
@@ -31,63 +60,35 @@ In this analysis, we used python as the primary programming language because of 
 
 These tools are well documented and come with several examples that make it easy to start using them. You can check out the linked documentation pages for more information.
 
-## Data Cleaning
+# Data Cleaning
 
-The most important step to take before we get started geenrating any kind of information from all these data sources, it is first important to clean our data and make sure that the datasets are compatible with each other. Since most of the data is divided on a host id basis, we must make sure that all the rows have values and cantain the same formatting.
+The most important step to take before we get started genenrating any kind of information from these data sources, is to first clean our data and make sure that the datasets are compatible with each other. One of the most important things we need to pay attantion to are the age groups, for some of the datasets there is missing information for the youngest (0-17), so we will fill those missing values by combining the previus age subgroups (0-4, 5-12, 13-17).
 
 ### What should we look into / errors?
-- some rows have bathrooms of value 0 (min bathrooms)
-- some rows have bedrooms of value 0 (min bedrooms)
-- some rows have beds of value 0 (min beds)
-- some rows have square feet of value 0 (min square_feet)
-- some rows have price of value 0 (min price)
-- some rows have price of 10000 dollars per night (max price)
-- there is a minimum nights reqirement stay of 1250 days (max minimum_nights)
-- 0 days availability for 30 days (min availability_30) - this one may be a legit requirement
-- look into maximum_nights column format
+
 
 # Hypothesis
-#### What do we understand from this? 
+#### What are our proposed Hypothesis? 
 
-## Linear Regression
-#### Hypothesis 
+## Hypothesis 1
 
-The following features are the best predictors for ***price*** of airbnb listings:
+#### The infection rate and fatality rate in the 75+ age group will be the highest fatality(deaths/total cases) because they are in the older age group.
 
-- Boroughs
-- Accommodates
-- Bathrooms
-- Bedrooms 
-- Beds 
-- Number of guest included (in price)
+## Hypothesis 2
+#### Also,there is a direct correlation between the fataly rate and density of borough for the 75+ age group. A 75+ person living in a denser borough will have a higher chance of exposure and have a higher fatality than another 75+ person living in a less dense borough.
 
-## Multinomial Logistic Regression
-#### Hyppothesis  
 
-The following features are the best predictors for ***location*** of airbnb listings:
+# Conclusion¶
 
-- Accommodates
-- Bathrooms
-- Bedrooms 
-- Beds 
-- Number of guest included (in price)
-- Minimun nights
+By exploring the correlation between the Number of COVID-19 Cases and the Fatality Rate per Age Group. We were able to conclude that there is no direct correlation between the number of cases per Age Group and the Fatality Rate per Age Group. However, we were able to prove our First Hypothesis, where we have stated that the Fatality Rate increases as people\'s age increase. We saw that the number for Fatality Rate was the highest for the 75+ age group.
 
-#### Conclusion¶
-In our first linear regression model, we tested the effect of the location (5 NYC boroughs) on price (cost of airbnb listing) and found that the coefficient of determination was the lowest at around 0.04. This might imply that price doesn't depend on which borough the listing is located in.
+In our second hypothesis we stated that there is a direct correlation between the fataly rate and density of a borough for the 75+ age group, however our findings and graphs did't supprt this statement. We were able to conclude that there is no direct correlation between the fatality rate and the density of a borough for the 75+ age group. This pattern could be a result of other socioeconomic factors that we weren't taking into consideration in this research.
 
-The second linear regression model, which include all feautures mentioned in the hypothesis except borough, had a higher coefficient of determination of around 0.5. From this, we can conclude that these features might not necessarily be the strongest indicators, but do have an effect on the price of an airbnb listing.
+# About us
 
-Futhermore, our first multinomial regression model had a score of 0.481 in predicting the location of a listing based on all the features mentioned in the hypothesis except the minimun nights.
-
-In hopes to increase the accuracy of our prediction, we did another multinomial regression model. In the second model, we added an extra feature, minimun nights, and we increased the training size. This resulted in a decrease in the coefficient of determination to 0.4774. This could be due to having biased data to begin with. In other words, our data could contain all luxurious apartments in the boroghs. If this is the case, then this would mean that the apartment features of the listings are too similar and there is no way for our model to tell them apart. For the third logistic regression model, we changed the features to be the number of bathrooms, minimum nights, and price, and this resulted in a score of 0.5594.
-
-We observed from all three confusion matrices that the models couldn't tell the difference between the boroughs, which could be a sign of underfitting. The next steps would be to add more data to our models, do cross-validation, and calculating the p values for the models.
-
-## About us
 | Preview                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [<img src="./img/clariza.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Clariza is an Ambitious data science fellow committed to academic excellence. Prepared to implement diverse skill sets, technical proficiencies and new perspectives to leadership personnel. Adaptable and driven with strong work ethic and ability to thrive in team-based or individually motivated settings. At her core, she is a problem solver and experimenter who’s passionate about using sociological and data driven approaches to tackling projects and building meaningful products that help people live better lives. She has worked in Medical billing, consumer and customer service and is now looking to pivot her career path towards Data Science.                                                                                    |
+| [<img src="./img/clariza.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Clariza is an Ambitious data science fellow committed to academic excellence. Prepared to implement diverse skill sets, technical proficiencies and new perspectives to leadership personnel. Adaptable and driven with strong work ethic and ability to thrive in team-based or individually motivated settings. At her core, she is a problem solver and experimenter who’s passionate about using sociological and data driven approaches to tackling projects and building meaningful products that help people live better lives.                                                                                  |
 | [<img src="./img/kari.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Kari is a Data Analyst and a multi-disciplinary tech enthusiast aspiring to be a Machine Learning Engineer. His flexibility with modern day technologies allows him to build fine projects with great detail. He spends his time pursuing opprtunities of great advancements and projects to develop and sharpen his skillset.|
-| [<img src="./img/stani.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Stanislava is a life-long learner with a background in Marketing and a passion for Cybersecurity & Data. Team-focused, resourceful, and detail-oriented with a successful record of over 7 years of client-facing experience. Seeking to effectively bridge the gap between Engineering and Business Teams, along with the capability of rendering excellent technical and communications skills.|
+| [<img src="./img/stani.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Stanislava is a life-long learner with a background in Marketing and a passion for Data Science & Cybersecurity Awareness. Team-focused, resourceful, and detail-oriented with a successful record of over 7 years of client-facing experience. Able to effectively bridge the gap between Engineering and Business Teams, along with the capability of rendering excellent technical and communications skills.|
 | [<img src="./img/juan.jpg" width="1000" />](https://i.imgur.com/0OoLaa5.png)                                                                                                                                                | Juan is a business Intelligence Analyst, Experienced on T-SQL Data Engineering, Analytics & Programming.Very familiarized on Systems SLDC analysis, design, development, implementation and support. Microsoft BI Data tools.|

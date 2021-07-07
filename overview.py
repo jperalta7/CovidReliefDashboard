@@ -91,9 +91,12 @@ def app():
     col1, col2 = st.beta_columns(2)
 
     with col1:
-        st.header('Our Findings')
+        st.title('Totals by Borough')
 
         st.write(data())
+        st.write("The filter borough will allow you to select the corresponding row in the above datafram.")
+
+        st.write("The chart will then display the three results: case count, hospitalized count and death count for that specific borough.")
         option = st.selectbox('Select a Borough', ('Bronx',
                             'Brooklyn', 'Manhattan', 'Queens', 'Staten Island'))
         if option == 'Bronx':
@@ -108,11 +111,11 @@ def app():
             st.write(staten_island())
 
     with col2:
-        st.header('NYC Covid Map by Zipcode')
+        st.title('NYC Covid Map by Zipcode')
 
         folium_static(m)
 
-        st.write('This is a map of the five borough that make up New York City. We see many covid looking icons scattered all across the map. Each one of these icons represent an individual zipcode in New York City. If you zoom in and click on a covid icon, you will see a pop up that inform sus whhich zipcode it is, the name of the neighborhood, the current cases and the positivity rate within the past 7 days.')
+        st.write('This is a map of the five NYC boroughs. We see many covid looking icons scattered all across the map. Each one of these icons represent an individual zipcode in New York City. If you zoom in and click on a covid icon, you will see a pop up that informs you on which zipcode it is, the name of the neighborhood, the current cases and the positivity rate within the past 7 days.')
 
 
 

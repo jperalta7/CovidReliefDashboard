@@ -28,13 +28,9 @@ def app():
             <div class="card-body">
               <h5 class="card-title">Clariza Mayo</h5>
               <p class="card-text">
-                Clariza is an Ambitious data science fellow committed to academic excellence. Prepared to implement
-                diverse skill sets, technical proficiencies and new perspectives to leadership personnel. Adaptable
+                Clariza is an Ambitious data science fellow with diverse skill sets, technical proficiencies and new perspectives to leadership personnel. Adaptable
                 and driven with strong work ethic and ability to thrive in team-based or individually motivated
-                settings. At her core, she is a problem solver and experimenter who’s passionate about using
-                sociological and data driven approaches to tackling projects and building meaningful products that
-                help people live better lives. She has worked in Medical billing, consumer and customer service and is
-                now looking to pivot her career path towards Data Science.
+                settings.
               </p>
             </div>
           </div>
@@ -47,10 +43,7 @@ def app():
             <div class="card-body">
               <h5 class="card-title">Stanislava Hristova</h5>
               <p class="card-text">
-                Stanislava is a life-long learner with a background in Marketing and a passion for Cybersecurity &
-                Data. Team-focused, resourceful, and detail-oriented with a successful record of over 7 years of
-                client-facing experience. Seeking to effectively bridge the gap between Engineering and Business
-                Teams, along with the capability of rendering excellent technical and communications skills.
+             Stanislava is a life-long learner with a background in Marketing and a passion for Data Science & Cybersecurity Awareness. Capable of effectively bridging the gap between Business and Engineering teams by rendering excellent technical and communication skills.
               </p>
             </div>
           </div>
@@ -64,9 +57,8 @@ def app():
             <div class="card-body">
               <h5 class="card-title">Juan Peralta</h5>
               <p class="card-text">
-                Juan is a business Intelligence Analyst, Experienced on T-SQL Data Engineering, Analytics &
-                Programming.Very familiarized on Systems SLDC analysis, design, development, implementation and
-                support. Microsoft BI Data tools.
+                Juan is a business Intelligence Analyst, Experienced on T-SQL Data Engineering, Analytics & Programming. Juan is very familiarized with Systems SLDC analysis, design, development, implementation and
+                support. Finally, Juan proficient in Microsoft BI Data tools.
               </p>
             </div>
           </div>
